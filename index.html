@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accessible HTML Elements Demo</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <h1 class="header__title">Accessible HTML Elements Demo</h1>
+    <p class="header__description">This demo showcases HTML elements with built-in accessibility features that work seamlessly with assistive technologies.</p>
+  </header>
+
+  <main class="main-content">
+    <!-- Details and Summary Section -->
+    <section class="section section--details">
+      <h2 class="section__title">Details and Summary Elements</h2>
+      <p class="section__description">The <code class="code">&lt;details&gt;</code> and <code class="code">&lt;summary&gt;</code> elements provide a native way to create expandable content sections with built-in keyboard navigation and screen reader support.</p>
+
+      <details class="details">
+        <summary class="details__summary">Click to reveal more information about accessibility</summary>
+        <div class="details__content">
+          <p class="details__text">This content is hidden by default and becomes visible when the summary is activated. The <code class="code">&lt;details&gt;</code> element automatically manages the expanded/collapsed state and provides proper ARIA attributes for assistive technologies.</p>
+          <ul class="details__list">
+            <li class="details__item">Keyboard accessible with Tab and Enter/Space</li>
+            <li class="details__item">Screen reader announces state changes</li>
+            <li class="details__item">No JavaScript required for basic functionality</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="details">
+        <summary class="details__summary">Another expandable section</summary>
+        <div class="details__content">
+          <p class="details__text">You can have multiple details elements on the same page, each maintaining their own independent state.</p>
+        </div>
+      </details>
+    </section>
+
+    <!-- Dialog Section -->
+    <section class="section section--dialog">
+      <h2 class="section__title">Dialog Element</h2>
+      <p class="section__description">The <code class="code">&lt;dialog&gt;</code> element represents a dialog box or interactive component with built-in focus management and modal behavior.</p>
+
+      <div class="button-group">
+        <button class="button button--primary" id="openDialog" type="button">Open Modal Dialog</button>
+        <button class="button button--secondary" id="openNonModalDialog" type="button">Open Non-Modal Dialog</button>
+      </div>
+
+      <dialog class="dialog dialog--modal" id="modalDialog" aria-labelledby="dialog-title">
+        <div class="dialog__content">
+          <h3 class="dialog__title" id="dialog-title">Modal Dialog Example</h3>
+          <p class="dialog__text">This is a modal dialog box. It traps focus within the dialog and can be closed by:</p>
+          <ul class="dialog__list">
+            <li class="dialog__item">Pressing the Escape key</li>
+            <li class="dialog__item">Clicking the close button</li>
+            <li class="dialog__item">Clicking outside the dialog (if enabled)</li>
+          </ul>
+          <div class="dialog__actions">
+            <button class="button button--close" id="closeModalDialog" type="button">Close Dialog</button>
+          </div>
+        </div>
+      </dialog>
+
+      <dialog class="dialog dialog--non-modal" id="nonModalDialog" aria-labelledby="non-modal-title">
+        <div class="dialog__content">
+          <h3 class="dialog__title" id="non-modal-title">Non-Modal Dialog Example</h3>
+          <p class="dialog__text">This is a non-modal dialog. It doesn't trap focus and allows interaction with the rest of the page.</p>
+          <div class="dialog__actions">
+            <button class="button button--close" id="closeNonModalDialog" type="button">Close Dialog</button>
+          </div>
+        </div>
+      </dialog>
+    </section>
+
+    <!-- Select Elements Section -->
+    <section class="section section--select">
+      <h2 class="section__title">Customizable Select Elements</h2>
+      <p class="section__description">The customizable <code class="code">&lt;select&gt;</code> element provides enhanced styling capabilities while maintaining full keyboard navigation and screen reader support. It uses a <code class="code">&lt;button&gt;</code> with <code class="code">&lt;selectedcontent&gt;</code> for custom styling.</p>
+
+      <div class="form-group">
+        <label class="form-group__label" for="basicSelect">Choose a programming language:</label>
+        <select class="select" id="basicSelect" name="language" aria-label="Choose a programming language">
+          <button class="select__button">
+            <selectedcontent class="select__selected-content">Please select an option</selectedcontent>
+          </button>
+          <option class="select__option" value="">Please select an option</option>
+          <option class="select__option" value="javascript">JavaScript</option>
+          <option class="select__option" value="python">Python</option>
+          <option class="select__option" value="java">Java</option>
+          <option class="select__option" value="csharp">C#</option>
+          <option class="select__option" value="rust">Rust</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label class="form-group__label" for="multiSelect">Choose multiple frameworks (hold Ctrl/Cmd):</label>
+        <select class="select select--multiple" id="multiSelect" name="frameworks" multiple size="4" aria-label="Choose multiple frameworks">
+          <button class="select__button select__button--multiple">
+            <selectedcontent class="select__selected-content">Select frameworks</selectedcontent>
+          </button>
+          <option class="select__option" value="react">React</option>
+          <option class="select__option" value="vue">Vue.js</option>
+          <option class="select__option" value="angular">Angular</option>
+          <option class="select__option" value="svelte">Svelte</option>
+          <option class="select__option" value="solid">Solid</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label class="form-group__label" for="groupedSelect">Choose a category:</label>
+        <select class="select" id="groupedSelect" name="category" aria-label="Choose a category">
+          <button class="select__button">
+            <selectedcontent class="select__selected-content">Select a category</selectedcontent>
+          </button>
+          <optgroup class="select__optgroup" label="Frontend">
+            <option class="select__option" value="html">HTML</option>
+            <option class="select__option" value="css">CSS</option>
+            <option class="select__option" value="js">JavaScript</option>
+          </optgroup>
+          <optgroup class="select__optgroup" label="Backend">
+            <option class="select__option" value="node">Node.js</option>
+            <option class="select__option" value="python">Python</option>
+            <option class="select__option" value="php">PHP</option>
+          </optgroup>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label class="form-group__label" for="styledSelect">Choose a theme (with custom styling):</label>
+        <select class="select select--styled" id="styledSelect" name="theme" aria-label="Choose a theme">
+          <button class="select__button select__button--styled">
+            <selectedcontent class="select__selected-content">Choose theme</selectedcontent>
+            <span class="select__arrow" aria-hidden="true">▼</span>
+          </button>
+          <option class="select__option" value="">Choose theme</option>
+          <option class="select__option" value="light">Light Theme</option>
+          <option class="select__option" value="dark">Dark Theme</option>
+          <option class="select__option" value="auto">Auto Theme</option>
+          <option class="select__option" value="high-contrast">High Contrast</option>
+        </select>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p class="footer__text">This demo demonstrates the power of semantic HTML elements with built-in accessibility features.</p>
+  </footer>
+
+  <script src="demo.js"></script>
+</body>
+</html>
