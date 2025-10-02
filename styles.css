@@ -331,6 +331,11 @@ p {
   display: block;
 }
 
+select,
+::picker(select) {
+  appearance: base-select;
+}
+
 /* Select Button Element */
 .select__button {
   width: 100%;
