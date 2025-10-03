@@ -1,0 +1,103 @@
+.details__wrapper > * + * {
+  margin-block-start: 20px;
+}
+
+details {
+  background: #f8f9fa;
+  border: 2px solid #e9ecef;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+details + details {
+  margin-block-start: 1rem;
+}
+
+details:focus-within {
+  border-color: #667eea;
+}
+
+details:not([open]):hover {
+  border-color: #667eea;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+}
+
+details[open] {
+  border-color: #667eea;
+  background: #ffffff;
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
+}
+
+/**
+ * Safari holds us back a bit here.
+ * Support for `::details-content` would mean we could remove
+ * the inner `.details__content` div.
+ */
+details[open] .details__content > * + * {
+  margin-block-start: 20px;
+}
+
+details[open] .details__content {
+  padding: 1.25rem;
+}
+
+details:not(:has(summary)) {
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  border-radius: 10px;
+  cursor: pointer;
+  padding: 12px 20px;
+  position: relative;
+  transition: all 0.3s ease;
+  display: block;
+}
+
+details:not(:has(summary))[open] .details__content {
+  font-weight: unset;
+}
+
+summary {
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  padding: 12px 20px;
+  position: relative;
+  transition: all 0.3s ease;
+
+  /**
+   * Firefox & Chrome
+   *
+   * `display:block` removes the list marker.
+   * Neither browser displays a disclosure icon.
+   */
+  display: block;
+}
+
+/*
+ * Safari
+ *
+ * By default, displays no list marker, but includes a disclosure icon.
+ * The following is required to remove the disclosure icon. `display:block` has no affect.
+ */
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary:hover,
+summary:focus {
+  background: linear-gradient(135deg, #e9ecef, #dee2e6);
+}
+
+summary::before {
+  color: #667eea;
+  content: '▶';
+  position: absolute;
+  right: 1.25rem;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+  transform: translateY(-50%) rotate(0.25turn);
+}

@@ -1,0 +1,170 @@
+/**
+ * Select element.
+ */
+
+/**
+ * Opts the <select> element and the ::picker(select) pseudo-element
+ * into the browser-defined default styles and behavior for
+ * customizable select.
+ */
+select,
+::picker(select) {
+  appearance: base-select;
+}
+
+.select-wrap + .select-wrap {
+  margin-block-start: 2rem;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--color--text--dark);
+}
+
+select {
+  background-color: white;
+  border-radius: 0.5rem;
+  border: 2px solid #e9ecef;
+  display: block;
+  position: relative;
+  width: 100%;
+}
+
+select:focus {
+  border-color: #667eea;
+}
+
+/* Clear select styles if we can style it */
+@supports not selector(::picker(select)) {
+
+  select {
+    width: max-content;
+  }
+}
+
+select button {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  font-size: 1rem;
+  justify-content: space-between;
+  min-height: 3rem;
+  padding: 0.75rem 1rem;
+  position: relative;
+  text-align: left;
+  width: 100%;
+}
+
+select button:hover {
+  border-color: #667eea;
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.15);
+}
+
+select button:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  outline: none;
+}
+
+selectedcontent {
+  color: #2c3e50;
+  flex: 1;
+  font-weight: 500;
+}
+
+::picker(select) {
+  background-color: white;
+  border: 1px solid #f1f3f4;
+}
+
+select::picker-icon {
+  align-items: center;
+  color: #667eea;
+  display: flex;
+  height: 100%;
+  margin-inline-end: 16px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: transform 0.3s ease;
+}
+
+select:open::picker-icon {
+  transform: rotate(0.5turn);
+}
+
+option {
+  border-bottom: 1px solid #f1f3f4;
+  color: #5a6c7d;
+  cursor: pointer;
+  padding: 0.75rem 1rem;
+  transition: all 0.2s ease;
+}
+
+option:hover {
+  background-color: #f8f9fa;
+  color: #2c3e50;
+}
+
+option:focus {
+  background-color: #e3f2fd;
+  color: #1976d2;
+  outline: none;
+}
+
+option:checked {
+  background-color: #667eea;
+  color: white;
+}
+
+select optgroup {
+  background-color: white;
+  border-bottom: 1px solid #e9ecef;
+  color: #2c3e50;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+}
+
+select:focus-within button {
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* .styled-select {} */
+
+.styled-select::picker-icon {
+  display: none;
+}
+
+select .styled-select__arrow {
+  color: white;
+  font-size: 0.875rem;
+  margin-left: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+select:open .styled-select__arrow {
+  transform: rotate(0.5turn);
+}
+
+.styled-select button {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border: none;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+  color: white;
+}
+
+.styled-select button:hover {
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+  transform: translateY(-1px);
+}
+
+.styled-select button:focus {
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+}
+
+.styled-select button selectedcontent {
+  color: white;
+}

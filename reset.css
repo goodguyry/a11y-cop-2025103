@@ -1,0 +1,81 @@
+/*** The new CSS Reset - version 1.2.0 (last updated 23.7.2021) ***/
+
+/* Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property */
+/* Omit SVGs so they render as expected. */
+/* We reset lists further down. */
+/* Allow default dialog styles */
+*:where(:not(img, svg):not(svg *):not(ol, ul):not(dialog, select):not([popover])) {
+  all: unset;
+
+  cursor: revert;
+  display: revert;
+}
+
+/* Clear select styles if we can style it */
+@supports selector(::picker(select)) {
+
+  select {
+    all: unset
+  }
+}
+
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/**
+ * Using `:focus-within` prevents jumping through browser in-page search results from smooth scrolling.
+ * https://piccalil.li/blog/a-modern-css-reset/
+ */
+ @media (prefers-reduced-motion: no-preference) {
+
+  html:focus-within {
+      scroll-behavior: smooth;
+  }
+}
+
+a {
+  color: inherit;
+}
+
+a:hover,
+a:focus {
+    text-decoration: revert;
+}
+
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Remove list styles on ul, ol elements with a list role, which suggests
+ * default styling will be removed.
+ *
+ * https://www.scottohara.me/blog/2019/01/12/lists-and-safari.html
+ */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+svg {
+  display: block;
+  pointer-events: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
