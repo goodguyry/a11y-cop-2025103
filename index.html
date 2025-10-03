@@ -169,7 +169,7 @@
       </div>
 
       <!-- [popover] is equivalent to [popover="auto"] -->
-      <div popover id="autoPopover">
+      <div popover class="popover" id="autoPopover">
         <h3>Popover Example</h3>
 
         <p>This is a popover. It doesn't trap focus and allows interaction with the rest of the page. However, it will move its <a href="#">interactive content</a> next in the tab order, and will return focus from its contents to the controlling <code>&lt;button&gt;</code> when closed via the Escape key.</p>
@@ -182,10 +182,10 @@
         </ul>
       </div>
 
-      <div popover="manual" id="manualPopover">
+      <div class="popover popover--manual" popover="manual" id="manualPopover">
         <h3>Popover Example (Manual)</h3>
 
-        <p>This is a "manual" popover. It can only be closed by clicking its controlling <code>&lt;button&gt;</code> again.</p>
+        <p>This is a "manual" popover. It uses <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_anchor_positioning">CSS anchor positioning</a> to keep it anchored to its controlling button. It can only be closed by clicking its controlling <code>&lt;button&gt;</code> again.</p>
       </div>
 
       <h3>JS-Powered Popover</h3>
@@ -202,6 +202,7 @@
           <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Popover_API">Popover API</a></li>
           <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Popover_API/Using">Using the Popover API</a></li>
           <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:popover-open">:popover-open</a></li>
+          <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_anchor_positioning">CSS anchor positioning</a></li>
           <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/ToggleEvent">ToggleEvent</a></li>
           <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/button#command">HTMLButtonElement: command attribute</a></li>
           <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/button#commandfor">HTMLButtonElement: commandfor attribute</a></li>

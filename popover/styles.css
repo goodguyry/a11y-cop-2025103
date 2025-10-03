@@ -15,3 +15,23 @@
   max-height: 80vh;
   width: max-content;
 }
+
+/**
+ * CSS Anchor positioning basics:
+ * - Not yet at baseline availability.
+ * - Add the `anchor-name` property with a name to the controlling element.
+ * - Reference the anchor in the popover styles using `position-anchor`
+ *   property and the `anchor()` function.
+ */
+[popovertarget="manualPopover"] {
+  anchor-name: --manual-popover-anchor;
+}
+
+.popover--manual:popover-open {
+  position-anchor: --manual-popover-anchor;
+
+  inset: unset;
+  left: anchor(left);
+  margin-block-start: 5px;
+  top: anchor(bottom);
+}
