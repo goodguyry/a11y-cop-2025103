@@ -40,11 +40,13 @@
           </div>
         </details>
 
-        <details id="hash-test">
+        <details>
           <summary>Another expandable section</summary>
 
-          <div class="details__content">
+          <div class="details__content" id="hash-test">
             <p>You can have multiple details elements on the same page, each maintaining their own independent state.</p>
+
+            <p>This one will be open by default if the URL includes a <kbd>#hash-test</kbd> hash (<a href="http://localhost:8000/#hash-test" target="_blank">link</a>).</p>
           </div>
         </details>
 

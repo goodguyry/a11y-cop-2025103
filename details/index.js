@@ -24,19 +24,4 @@ export default function initDetails() {
   };
 
   detailsWrapper.addEventListener('toggle', handleToggle, { capture: true });
-
-  /**
-   * Check for a hash in the URL and open the corresponding details.
-  */
- function disclosureHashCheck() {
-   const hash = window.location.hash.replace('#', '');
-   const details = document.getElementById(hash);
-
-   if (null !== details && details instanceof HTMLDetailsElement) {
-      details.open = true;
-    }
-  }
-
-  window.addEventListener('load', disclosureHashCheck);
-  window.addEventListener('hashchange', disclosureHashCheck);
 }
