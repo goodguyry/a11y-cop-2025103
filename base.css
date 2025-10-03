@@ -63,9 +63,14 @@ a[href] {
   text-decoration: revert;
 }
 
-a[href]:hover,
-a[href]:focus-visible {
+a[href]:hover {
   text-decoration-thickness: 2px;
+}
+
+a[href]:focus-visible {
+  text-decoration: none;
+  outline: 2px solid;
+  outline-offset: 2px;
 }
 
 p:not(:last-child) {
@@ -187,9 +192,10 @@ footer p {
 
 /* Button Block */
 .button {
-  padding: 0.75rem 1.5rem;
   border-radius: 8px;
+  color: white;
   cursor: pointer;
+  padding: 0.75rem 1.5rem;
   transition: transform 0.3s ease;
 }
 
@@ -216,13 +222,11 @@ footer p {
 
 .button--primary {
   background: linear-gradient(in oklch 135deg, #667eea, #764ba2);
-  color: white;
   box-shadow: 0 4px 12px rgb(102, 126, 234, 0.3);
 }
 
 .button--secondary {
   background: linear-gradient(in oklch 135deg, #6c757d, #495057);
-  color: white;
   box-shadow: 0 4px 12px rgb(108, 117, 125, 0.3);
 }
 

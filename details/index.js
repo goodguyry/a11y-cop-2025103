@@ -1,5 +1,10 @@
 /**
- * JS for Details element.
+ * Details Element.
+ *
+ * Notes:
+ * - Details does not require JavaScript. These are examples of
+ *   incorporating the `'toggle'` event and the details element's
+ *   `open` property.
  */
 export default function initDetails() {
   const detailsWrapper = document.querySelector('.details__wrapper');

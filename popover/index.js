@@ -1,3 +1,11 @@
+/**
+ * Popover Element.
+ *
+ * Notes:
+ * - Popovers don't require JavaScript. This one is a contrived
+ *   example of dynamically defining an element as a popup and
+ *   invoking it with JavaScript
+ */
 export default function initPopover() {
   const popover = document.getElementById('jsPopover');
 
