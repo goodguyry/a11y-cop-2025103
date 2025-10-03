@@ -79,6 +79,10 @@ selectedcontent {
   border: 1px solid #f1f3f4;
 }
 
+select option::checkmark {
+  content: "→";
+}
+
 select::picker-icon {
   align-items: center;
   color: #667eea;
@@ -96,9 +100,12 @@ select:open::picker-icon {
 }
 
 option {
+  align-items: center;
   border-bottom: 1px solid #f1f3f4;
   color: #5a6c7d;
   cursor: pointer;
+  display: flex;
+  gap: 10px;
   padding: 0.75rem 1rem;
   transition: all 0.2s ease;
 }
